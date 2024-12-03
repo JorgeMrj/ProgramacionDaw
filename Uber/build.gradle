@@ -1,0 +1,32 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.0.10'
+    id("org.jetbrains.dokka") version '1.9.20'
+}
+
+group = 'jorgemrj'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+
+    implementation("org.lighthousegames:logging:1.5.0") // Librería de Logging
+    implementation("ch.qos.logback:logback-classic:1.5.12") // Implementación de Logback
+
+    // Mordant
+    implementation("com.github.ajalt.mordant:mordant:2.2.0")
+    implementation("net.java.dev.jna:jna:5.13.0")
+
+}
+
+test {
+    useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(21)
+}
+
+
