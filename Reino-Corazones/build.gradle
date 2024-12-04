@@ -1,0 +1,33 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.0.10'
+    id('org.jetbrains.dokka') version '1.9.20'
+}
+
+group = 'jorgemrj'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(21)
+}
+
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "jorgemrj.MainKt"
+    }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    configurations["compileClasspath"].forEach { file ->
+        from(zipTree(file.absoluteFile))
+    }
+    archiveFileName.set("reino-corazones.jar")
+}
