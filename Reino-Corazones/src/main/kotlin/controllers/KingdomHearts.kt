@@ -76,10 +76,10 @@ class KingdomHearts (
 
         private fun SwordAttack(): Int {
             if ((0..100).random() <= 15) {
-                println("You have a critical super shot!")
+                println("You have a critical sword attack!")
                 return 50
             }
-            println("You have a normal shot!")
+            println("You have a normal attack!")
             return 25
         }
 
@@ -120,7 +120,7 @@ class KingdomHearts (
     fun printReport() {
         println("Map size: $mapSize")
         println("Number of enemies: $numberOfEnemies")
-        println("Number of shots: $numberOfAttacks")
+        println("Number of attacks: $numberOfAttacks")
         println("Number of hits: $numberOfHits")
         println("Performance: $performance")
         println("Number of left enemies: $leftEnemies")
