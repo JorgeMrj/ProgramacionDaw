@@ -59,15 +59,15 @@ class KingdomHearts (
 
                         else -> {
                             enemy.maxEnergy -= efectiveDamage
-                            println("Efective damage: $efectiveDamage")
-                            println("Enemy after atack: $enemy")
+                            println("daño efectivo: $efectiveDamage")
+                            println("enemigo despues del daño: $enemy")
 
                         }
                     }
                     backBuffer[row][col] = if (enemy.isAlive) enemy else null
                     swapBuffers()
                 } else {
-                    println("You have missed!")
+                    println("has fallado")
                 }
                 printMap()
 
