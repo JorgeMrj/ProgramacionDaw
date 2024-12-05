@@ -144,21 +144,15 @@ class KingdomHearts (
         return count
     }
 
-    /**
-     * Gets the total performance of the player.
-     */
     private fun getTotalPerformance(): Double {
         if (numberOfAttacks == 0) {
             return 0.0
         }
-        // Round to 2 decimals the result
         val result = (numberOfHits.toDouble() / numberOfAttacks.toDouble()) * 100
         return round(result * 100) / 100
     }
 
-    /**
-     * Orders the enemies by maxEnergy in descending order.
-     */
+
     private fun orderEnemies() {
         for (i in 0..<enemies.size - 1) {
             for (j in 0..<enemies.size - i - 1) {
