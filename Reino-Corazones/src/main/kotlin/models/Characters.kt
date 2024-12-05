@@ -28,14 +28,6 @@ class character private constructor(
             }
         }
 
-
-        fun fromType(type: Type): character {
-            return when (type) {
-                Type.sora -> character(120, type, (9..12).random())
-                Type.riku -> character(150, type, 0)
-                Type.kairi -> character((80..100).random(), type, 0)
-            }
-        }
     }
 
 
