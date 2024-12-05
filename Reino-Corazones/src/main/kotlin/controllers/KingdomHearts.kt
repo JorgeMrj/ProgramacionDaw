@@ -40,14 +40,14 @@ class KingdomHearts (
 
                 val swordValue = SwordAttack()
                 numberOfAttacks++
-                // Posicion del disparo
+
                 val row = (0..<mapSize).random()
                 val col = (0..<mapSize).random()
-                // hemos dado a un enemigo?
+
                 if (frontBuffer[row][col] != null) {
                     println("has golpeado a una sombre en ${row + 1}, ${col + 1}")
                     numberOfHits++
-                    // Analizamos segun el tipo de enemigo
+
                     val enemy = frontBuffer[row][col]!!
                     var efectiveDamage: Int = 0
                     println("enemigo antes del ataque $enemy")
@@ -133,9 +133,7 @@ class KingdomHearts (
         println()
     }
 
-    /**
-     * Gets the total number of dead enemies.
-     */
+
     private fun getTotalDeadEnemies(): Int {
         var count = 0
         for (enemy in enemies) {
