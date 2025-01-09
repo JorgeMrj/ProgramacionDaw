@@ -1,6 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '2.0.10'
-    id('org.jetbrains.dokka') version '1.9.20'
+    id("org.jetbrains.dokka") version"1.9.20"
 }
 
 group = 'jorgemrj'
@@ -12,6 +12,10 @@ repositories {
 
 dependencies {
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    implementation("ch.qos.logback:logback-classic:1.5.12")
+    implementation("com.github.ajalt.mordant:mordant:2.2.0")
+    implementation("org.lighthousegames:logging:1.5.0")
+
 }
 
 test {
@@ -20,14 +24,16 @@ test {
 kotlin {
     jvmToolchain(21)
 }
-
-tasks.jar {
+tasks.jar{
     manifest {
-        attributes["Main-Class"] = "jorgemrj.MainKt"
+        attributes["Main-Class"] ="jorgemrj.MainKt"
     }
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-    configurations["compileClasspath"].forEach { file ->
+    duplicatesStrategy = duplicatesStrategy.INCLUDE
+    configurations["compileClasspath"].forEach {file ->
         from(zipTree(file.absoluteFile))
     }
-    archiveFileName.set("reino-corazones.jar")
+    archiveFileName.set("reino.jar")
 }
+
+
+

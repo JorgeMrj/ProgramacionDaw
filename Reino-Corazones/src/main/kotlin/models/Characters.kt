@@ -46,9 +46,6 @@ class character private constructor(
     }
 
 
-
-
-    // Una clase anidada
     enum class Type {
         sora, riku, kairi
     }

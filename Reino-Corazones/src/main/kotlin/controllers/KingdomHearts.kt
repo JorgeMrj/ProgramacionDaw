@@ -170,7 +170,7 @@ class KingdomHearts (
             for (row in frontBuffer) {
                 for (character in row) {
                     if (character == null) {
-                        print("[🟤]")
+                        print("[🟤🟤]")
                     } else {
                         print(character.color)
                     }
