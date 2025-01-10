@@ -1,7 +1,11 @@
 package jorgemrj.models
 
-interface Delantero: Posicion {
-    fun chutar(){
-        println("chutar")
+class Delantero: IDelantero {
+    override fun chutar() {
+        println("Chutar")
+    }
+
+    override fun jugar() {
+        println("Jugar como delantero")
     }
 }
